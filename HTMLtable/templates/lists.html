@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <table class="table table-striped">
+        <thead  class="table-info">
+            <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Full Name</th>
+            </tr>
+             
+        </thead>
+        <tbody>
+            {% for i in users %}
+            <tr>
+                <td scope="row">{{i['first_name']}}</td>
+                <td scope="row">{{i['last_name']}}</td>
+                <td scope="row">{{i['first_name']}} {{i['last_name']}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
