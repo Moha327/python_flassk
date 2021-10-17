@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- <body>
+    <form action = '/', method="POST"> 
+        <textarea name="text"></textarea>
+        <input type="submit" name="affiliation" value="random_numbernumber" data-key='affiliation' data-value='number' ><label for="number">Number</label>
+    </form>
+    <p> {{ session['random_number'] }} is your random number. </p>
+    <a href="/">increase</a>
+</body> -->
+<body>
+    <div id="main">
+        <h4>Welcome to the Great Number Game!</h4>
+        <h6>I am thinking of a number between 1 and 100</h6>
+        <h5>Take a guess!</h5>
+        {% if status == 'low': %}
+            <div class="box no_win">Too Low!</div>
+        {% elif status == 'high': %}
+            <div class="box no_win">Too High!</div>
+        {% elif status == 'lose': %}
+            <div class="box no_win">
+                <p>You Lose</p>
+                <button type="button"><a href="/destroy_session">Try again?</a></button>
+            </div>
+        {% elif status == 'win': %}
+            <div class="box win">
+                <p>
+                    {{ randNum }} was the number!
+                    Guess Attempts: {{ guesses }}
+                </p>
+                <button type="button"><a href="/destroy_session">Play again!</a></button>
+            </div>
+        {% endif %}
+        {% if status != 'win' and status != 'lose': %}
+        <form action='/guess' method='post'>
+            <input type="number" name="guess-value" min="1" max="100">
+            <input type="submit" value="Submit">
+        </form>
+        {% endif %}
+    </div>
+</body>
+</html>
