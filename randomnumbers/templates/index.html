@@ -15,7 +15,7 @@
     <a href="/">increase</a>
 </body> -->
 <body>
-    <div id="main">
+    <!-- <div id="main">
         <h4>Welcome to the Great Number Game!</h4>
         <h6>I am thinking of a number between 1 and 100</h6>
         <h5>Take a guess!</h5>
@@ -43,6 +43,15 @@
             <input type="submit" value="Submit">
         </form>
         {% endif %}
-    </div>
+    </div> -->
+    <h1>Welcome to the Great Number Game!</h1>
+    <h3>Think of a number 1 - 100...see if you can guess it right!</h3>
+    <p class="answer">{{answer}}</p>
+    <form action='/guess' methods='POST'>
+        Guess: <input type='text' name='guess',value = "x">
+        
+        <input type='submit' value='submit'>
+    </form>
+  
 </body>
 </html>

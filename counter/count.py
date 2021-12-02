@@ -22,6 +22,8 @@ def index2():
     else:
         session['counter'] += 2
     return render_template('show.html')
+
+
 if __name__ == '__main__':
     app.debug = True
     app.run()
